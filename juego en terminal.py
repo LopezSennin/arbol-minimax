@@ -115,6 +115,19 @@ def cuadrosNoExistentes(ambiente):
     contador2 = 0
     return cuadros
 
+
+def numeroDeCoincidencias(ambiente, cuadro):
+    contador = 0
+    for i in cuadro:
+        if ambiente[i] == 1:
+            contador = contador + 1
+    return contador
+
+
+#prueba numeroDeCoincidencias(ambiente, cuadro2)
+#cuadro2 = [2,4,5,6]
+#print(numeroDeCoincidencias(ambiente, cuadro2))
+
 #Prueba cuadrosNoExistentes(ambiente)
 #print(ambiente)
 #print(cuadrosExistenetes(ambiente))
