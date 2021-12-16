@@ -1,5 +1,6 @@
 import copy
-ambiente= [1,1,1,1,0,0,1,1,1,1,0,0]
+import numpy as np
+ambiente= [1,1,1,1,0,0,1,1,0,1,0,0]
 
 class arbol():
     def __init__(self):
@@ -156,14 +157,11 @@ def llenarArbol(ambiente):
     control2=0
     for i in range(12):
         if pudePonerLinea(i, ambiente):
-            #print(i)
-
             arvol.hijos.append(arbol())
             arvol.hijos[control].raiz=ponerLinea(i, ambiente)
             for j in range(12):
                 if pudePonerLinea(j, arvol.hijos[control].raiz):
                     arvol.hijos[control].hijos.append(arbol())
-
                     arvol.hijos[control].hijos[control2]=ponerLinea(j,arvol.hijos[control].raiz) # falta
                     control2 = control2 + 1
                     if j == 11:
@@ -202,11 +200,55 @@ def llenarArbol(ambiente):
     
     return arvol
 
+def valorHoja(ambiente):
+    cuadrosPosibleaux = cuadrosNoExistentes(ambiente)    # ---->  [[1,2,4,5,],[6,7,8,9],[4,6,2,5]]
+    auxvalorAmbiente=[]
+    for i in cuadrosPosibleaux:
+        valorAux = numeroDeCoincidencias(ambiente, i)
+        if valorAux== 0:
+            auxvalorAmbiente.append(1)
+        if valorAux== 1:
+            auxvalorAmbiente.append(1)
+        if valorAux== 2:
+            auxvalorAmbiente.append(2)
+        if valorAux== 3:
+            auxvalorAmbiente.append(4)
+        if valorAux== 4:
+            auxvalorAmbiente.append(-4)
+    return sum(auxvalorAmbiente)
+
+#herisyuca 
+def obtenerListaPuntajesdeHojas(listaHojas):
+    listavaloresdeHojas=[]
+    for i in listaHojas:
+        puntajeAux=valorHoja(i)
+        listavaloresdeHojas.append(puntajeAux)
+    return listavaloresdeHojas
+
+def minimax(ambiente):
+    arvol = llenarArbol(ambiente)
+    numeroDeHijos_aux = contadorDeCeros(ambiente)
+    listaDePuntajeN1 = []
+    for i in range(numeroDeHijos_aux):
+        listaNodos_aux = listadoHojasPorNodo(arvol,i)
+        listaPuntaje_aux = obtenerListaPuntajesdeHojas(listaNodos_aux)
+        puntajeAux= min(listaPuntaje_aux)
+        listaDePuntajeN1.append(puntajeAux)
+    puntajeDefinitivo=max(listaDePuntajeN1)
+    posicion = 0
+    for j in range(len(listaDePuntajeN1)):
+        if listaDePuntajeN1[j] == puntajeDefinitivo:
+            posicion = j
+            break
+    return arvol.hijos[posicion].raiz
+
+
+
+
 #print(ambiente)
 #arvol = llenarArbol(ambiente)
-
-#print(listadoHojasPorNodo(arvol, 1))
-
+#listaHojas=listadoHojasPorNodo(arvol, 1)
+#print(obtenerListaPuntajesdeHojas(listaHojas))
 
 '''
 ambiente2=list(ambiente)
