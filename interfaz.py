@@ -4,6 +4,7 @@ from tkinter import ttk
 from functools import partial
 import numpy as np
 
+
 class Tabla(tk.Frame):
 
     def __init__(self, master=None):
