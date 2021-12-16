@@ -202,10 +202,10 @@ def llenarArbol(ambiente):
     
     return arvol
 
-print(ambiente)
-arvol = llenarArbol(ambiente)
+#print(ambiente)
+#arvol = llenarArbol(ambiente)
 
-print(listadoHojasPorNodo(arvol, 1))
+#print(listadoHojasPorNodo(arvol, 1))
 
 
 '''

@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import ttk
 from functools import partial
 import numpy as np
-
+import minmax as algoritmos
 
 class Tabla(tk.Frame):
 
@@ -147,28 +147,28 @@ class Tabla(tk.Frame):
     def es_un_cuadrado(self):
         valor=1
         if self.turno % 2 == 0:
-                if (self.estado_tablero[0] == self.estado_tablero[1] and self.estado_tablero[0] == self.estado_tablero[2] and self.estado_tablero[0] == self.estado_tablero[3] and self.estado_tablero[0] != 0):
+                if ((self.estado_tablero[0] == self.estado_tablero[1] and self.estado_tablero[0] == self.estado_tablero[2] and self.estado_tablero[0] == self.estado_tablero[3] and self.estado_tablero[0] != 0) and self.estado_cuadros[0]==0):
                     self.puntajeJ+=1
                     self.estado_cuadros[0]=valor
                     celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
                     celda0.grid(row=2, column=1)
                     label0=tk.Label(master=celda0, text="A",font=("times new roman", 50),bg="blue",fg="black",bd=20)
                     label0.pack()
-                elif (self.estado_tablero[2] == self.estado_tablero[4] and self.estado_tablero[2] == self.estado_tablero[5] and self.estado_tablero[2] == self.estado_tablero[6] and self.estado_tablero[2] != 0):
+                elif ((self.estado_tablero[2] == self.estado_tablero[4] and self.estado_tablero[2] == self.estado_tablero[5] and self.estado_tablero[2] == self.estado_tablero[6] and self.estado_tablero[2] != 0) and self.estado_cuadros[1]==0):
                     self.puntajeJ+=1
                     self.estado_cuadros[1]=valor
                     celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
                     celda0.grid(row=2, column=3)
                     label0=tk.Label(master=celda0, text="X",font=("times new roman", 50),bg="blue",fg="black",bd=20)
                     label0.pack()
-                elif (self.estado_tablero[3] == self.estado_tablero[9] and self.estado_tablero[3] == self.estado_tablero[10] and self.estado_tablero[3] == self.estado_tablero[11] and self.estado_tablero[3] != 0):
+                elif ((self.estado_tablero[3] == self.estado_tablero[9] and self.estado_tablero[3] == self.estado_tablero[10] and self.estado_tablero[3] == self.estado_tablero[11] and self.estado_tablero[3] != 0) and self.estado_cuadros[2]==0):
                     self.puntajeJ+=1
                     self.estado_cuadros[2]=valor
                     celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
                     celda0.grid(row=4, column=1)
                     label0=tk.Label(master=celda0, text="D",font=("times new roman", 50),bg="blue",fg="black",bd=20)
                     label0.pack()
-                elif (self.estado_tablero[6] == self.estado_tablero[7] and self.estado_tablero[6] == self.estado_tablero[8] and self.estado_tablero[6] == self.estado_tablero[9] and self.estado_tablero[6] != 0):
+                elif ((self.estado_tablero[6] == self.estado_tablero[7] and self.estado_tablero[6] == self.estado_tablero[8] and self.estado_tablero[6] == self.estado_tablero[9] and self.estado_tablero[6] != 0) and self.estado_cuadros[3]==0):
                     self.puntajeJ+=1
                     self.estado_cuadros[3]=valor
                     celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
@@ -177,28 +177,28 @@ class Tabla(tk.Frame):
                     label0.pack()
         else:
             
-            if (self.estado_tablero[0] == self.estado_tablero[1] and self.estado_tablero[0] == self.estado_tablero[2] and self.estado_tablero[0] == self.estado_tablero[3] and self.estado_tablero[0] != 0):
+            if ((self.estado_tablero[0] == self.estado_tablero[1] and self.estado_tablero[0] == self.estado_tablero[2] and self.estado_tablero[0] == self.estado_tablero[3] and self.estado_tablero[0] != 0) and self.estado_cuadros[0]==0):
                 self.puntajeM+=1
                 self.estado_cuadros[0]=valor
                 celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
                 celda0.grid(row=2, column=1)
                 label0=tk.Label(master=celda0, text="B",font=("times new roman", 50),bg="red",fg="black",bd=20)
                 label0.pack()
-            elif (self.estado_tablero[2] == self.estado_tablero[4] and self.estado_tablero[2] == self.estado_tablero[5] and self.estado_tablero[2] == self.estado_tablero[6] and self.estado_tablero[2] != 0):
+            elif ((self.estado_tablero[2] == self.estado_tablero[4] and self.estado_tablero[2] == self.estado_tablero[5] and self.estado_tablero[2] == self.estado_tablero[6] and self.estado_tablero[2] != 0) and self.estado_cuadros[1]==0):
                 self.puntajeM+=1
                 self.estado_cuadros[1]=valor
                 celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
                 celda0.grid(row=2, column=3)
                 label0=tk.Label(master=celda0, text="M",font=("times new roman", 50),bg="red",fg="black",bd=20)
                 label0.pack()
-            elif (self.estado_tablero[3] == self.estado_tablero[9] and self.estado_tablero[3] == self.estado_tablero[10] and self.estado_tablero[3] == self.estado_tablero[11] and self.estado_tablero[3] != 0):
+            elif ((self.estado_tablero[3] == self.estado_tablero[9] and self.estado_tablero[3] == self.estado_tablero[10] and self.estado_tablero[3] == self.estado_tablero[11] and self.estado_tablero[3] != 0) and self.estado_cuadros[2]==0):
                 self.puntajeM+=1
                 self.estado_cuadros[2]=valor
                 celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
                 celda0.grid(row=4, column=1)
                 label0=tk.Label(master=celda0, text="N",font=("times new roman", 50),bg="red",fg="black",bd=20)
                 label0.pack()
-            elif (self.estado_tablero[6] == self.estado_tablero[7] and self.estado_tablero[6] == self.estado_tablero[8] and self.estado_tablero[6] == self.estado_tablero[9] and self.estado_tablero[6] != 0):
+            elif ((self.estado_tablero[6] == self.estado_tablero[7] and self.estado_tablero[6] == self.estado_tablero[8] and self.estado_tablero[6] == self.estado_tablero[9] and self.estado_tablero[6] != 0) and self.estado_cuadros[3]==0):
                 self.puntajeM+=1
                 self.estado_cuadros[3]=valor
                 celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
