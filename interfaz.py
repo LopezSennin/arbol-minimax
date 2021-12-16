@@ -139,7 +139,7 @@ class Tabla(tk.Frame):
     puntajeM=0
     estado_tablero= np.zeros(12)
     estado_cuadros= np.zeros(4)
-    estado_tableroIA=[0,1,0,0,0,0,0,0,0,0,0,0]
+    estado_tableroIA=[0,0,0,1,0,0,0,0,0,0,0,0]
 
     def actualizar_tablero(self,posicion):
         valor=1
@@ -338,7 +338,7 @@ class Tabla(tk.Frame):
                 
             self.actualizar_tablero(1)
             self.es_un_cuadrado()
-        
+        self.turno+=1
 
     def Marcar(self,b):
         if (b == "0"):
