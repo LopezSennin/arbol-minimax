@@ -65,20 +65,61 @@ def cuadrosExistenetes(ambiente):
     return cuadros
 
 
-def quitarCuadrosExistentes(ambiente):
-    a = cuadrosExistenetes(ambiente)
-    if len(a) == 0:
-        return ambiente
-    else:
-        for i in range(len(a)):
-            for j in a[i]:
-                ambiente[j]=0
-    return ambiente
+def cuadrosNoExistentes(ambiente):
+    cuadros = []
+    cuadro1 = [0,1,2,3]
+    cuadro2 = [2,4,5,6]
+    cuadro3 = [3,9,10,11]
+    cuadro4 = [6,7,8,9]
+    contador = 0
+    contador2 = 0
+    for i in cuadro1:
+        contador2 = contador2 + 1
+        if ambiente[i] == 1:
+            contador = contador + 1
+        if contador2 == 4:
+            if contador != 4:
+                cuadros.append(cuadro1)
+                contador2 = 0
+    contador = 0
+    contador2 = 0
+    for i in cuadro2:
+        contador2 = contador2 + 1
+        if ambiente[i] == 1:
+            contador = contador + 1
+        if contador2 == 4:
+            if contador != 4:
+                cuadros.append(cuadro2)
+                contador2 = 0
+    contador = 0
+    contador2 = 0
+    for i in cuadro3:
+        contador2 = contador2 + 1
+        if ambiente[i] == 1:
+            contador = contador + 1
+        if contador2 == 4:
+            if contador != 4:
+                cuadros.append(cuadro3)
+                contador2 = 0
+    contador = 0
+    contador2 = 0
+    for i in cuadro4:
+        contador2 = contador2 + 1
+        if ambiente[i] == 1:
+            contador = contador + 1
+        if contador2 == 4:
+            if contador != 4:
+                cuadros.append(cuadro4)
+                contador2 = 0
+    contador = 0
+    contador2 = 0
+    return cuadros
 
-#Prueba quitarCuadrosExistentes(ambiente)
+#Prueba cuadrosNoExistentes(ambiente)
 #print(ambiente)
 #print(cuadrosExistenetes(ambiente))
-#print(quitarCuadrosExistentes(ambiente))
+#print('-----------------------------')
+#print(cuadrosNoExistentes(ambiente))
 
 
 
