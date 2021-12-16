@@ -139,7 +139,7 @@ class Tabla(tk.Frame):
     puntajeM=0
     estado_tablero= np.zeros(12)
     estado_cuadros= np.zeros(4)
-    estado_tableroIA=[0,0,0,1,0,0,0,0,0,0,0,0]
+    estado_tableroIA=[0,0,1,0,0,0,0,0,0,0,0,0]
 
     def actualizar_tablero(self,posicion):
         valor=1
@@ -235,16 +235,16 @@ class Tabla(tk.Frame):
         
         for i in range(12):
             if self.estado_tablero[i] == ambienteCon1Movimiento[i]:
-                self.estado_tableroIA = 0
+                self.estado_tableroIA[i] = 0
             else:
-                self.estado_tableroIA = 1
+                self.estado_tableroIA[i] = 1
     
     def generarAmbienteCon1MovimientoIA(self):
         ambienteCon1Movimiento = np.list(algoritmos.minimax(self.estado_tablero))
         return ambienteCon1Movimiento
 
-    def hacerMovimientoIA(sefl):
-        self.generarTableroIA(sefl.generarAmbienteCon1MovimientoIA())
+    def hacerMovimientoIA(self):
+        self.generarTableroIA(self.generarAmbienteCon1MovimientoIA())
 
     def lado_marca_ia(self,tableroActual,tableroIA):
         listaux=[]
@@ -258,6 +258,7 @@ class Tabla(tk.Frame):
                 return listaux[i]
 
     def MovimientoIA(self):
+        
         self.MarcarIA(str(self.lado_marca_ia(self.estado_tablero,self.estado_tableroIA)))
         print("entromovimiento")
 
@@ -541,7 +542,8 @@ class Tabla(tk.Frame):
         #print(self.estado_cuadros)
         #print(self.puntajeJ)
         #print(self.puntajeM)
-
+        self.hacerMovimientoIA()
+        print(self.estado_tableroIA)
 def main():
     app = tk.Tk()
     app.title('Organización Tabla')
