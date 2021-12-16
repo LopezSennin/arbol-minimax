@@ -231,6 +231,21 @@ class Tabla(tk.Frame):
             label0=tk.Label(master=celda0, text=texto,font=("times new roman", 12),bg="gray",fg="black",width=38,height=20)
             label0.pack()
 
+    def generarTableroIA(self, ambienteCon1Movimiento):
+        
+        for i in range(12):
+            if self.estado_tablero[i] == ambienteCon1Movimiento[i]:
+                self.estado_tableroIA = 0
+            else:
+                self.estado_tableroIA = 1
+    
+    def generarAmbienteCon1MovimientoIA(self):
+        ambienteCon1Movimiento = np.list(algoritmos.minimax(self.estado_tablero))
+        return ambienteCon1Movimiento
+
+    def hacerMovimientoIA(sefl):
+        self.generarTableroIA(sefl.generarAmbienteCon1MovimientoIA())
+
     def lado_marca_ia(self,tableroActual,tableroIA):
         listaux=[]
         for i in range(len(tableroActual)):
