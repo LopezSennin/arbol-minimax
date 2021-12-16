@@ -1,5 +1,5 @@
 import copy
-ambiente= [1,0,0,0,0,0,0,0,0,0,0,0]
+ambiente= [1,1,1,1,0,0,1,1,1,1,0,0]
 
 class arbol():
     def __init__(self):
@@ -28,6 +28,43 @@ def contadorDeCeros(ambiente):
             contador = contador + 1
     return contador
 
+def cuadrosExistenetes(ambiente):
+    cuadros = []
+    cuadro1 = [0,1,2,3]
+    cuadro2 = [2,4,5,6]
+    cuadro3 = [3,9,10,11]
+    cuadro4 = [6,7,8,9]
+    contador = 0
+    for i in cuadro1:
+        if ambiente[i] == 1:
+            contador = contador + 1
+            if contador == 4:
+                cuadros.append(cuadro1)
+    contador = 0
+    
+    for i in cuadro2:
+        if ambiente[i] == 1:
+            contador = contador + 1
+            if contador == 4:
+                cuadros.append(cuadro2)
+    contador = 0
+
+    for i in cuadro3:
+        if ambiente[i] == 1:
+            contador = contador + 1
+            if contador == 4:
+                cuadros.append(cuadro3)
+    contador = 0
+
+    for i in cuadro4:
+        if ambiente[i] == 1:
+            contador = contador + 1
+            if contador == 4:
+                cuadros.append(cuadro4)
+    contador = 0
+    return cuadros
+
+print(cuadrosExistenetes(ambiente))
 
 def ponerLinea(N,ambiente):
     ambientecopia = list(ambiente)
