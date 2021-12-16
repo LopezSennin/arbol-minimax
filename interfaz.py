@@ -139,7 +139,7 @@ class Tabla(tk.Frame):
     puntajeM=0
     estado_tablero= np.zeros(12)
     estado_cuadros= np.zeros(4)
-    estado_tableroIA=[0,0,0,0,0,0,1,0,0,0,0,0]
+    estado_tableroIA=[0,0,0,0,0,0,0,0,1,0,0,0]
 
     def actualizar_tablero(self,posicion):
         valor=1
@@ -231,7 +231,7 @@ class Tabla(tk.Frame):
             label0=tk.Label(master=celda0, text=texto,font=("times new roman", 12),bg="gray",fg="black",width=38,height=20)
             label0.pack()
 
-    def funcionA(self,tableroActual,tableroIA):
+    def lado_marca_ia(self,tableroActual,tableroIA):
         listaux=[]
         for i in range(len(tableroActual)):
             if tableroActual[i]==0:
@@ -242,27 +242,42 @@ class Tabla(tk.Frame):
                 print(listaux[i])
                 return listaux[i]
 
-    def funcionB(self):
-        str(self.funcionA(self.estado_tablero,self.estado_tableroIA))
+    def convierte_lado_string(self):
+        str(self.lado_marca_ia(self.estado_tablero,self.estado_tableroIA))
 
     def MovimientoIA(self):
-        self.Marcar(self.funcionB())
+        self.MarcarIA(self.convierte_lado_string())
+        print("entromovimiento")
+
+    def MarcarIA(self,b):
+        print(b)
+        print(type(b))
+        if (b=="8"):
+            self.Boton0['state']='disabled'
+            self.Boton0['bg']='red'
+            
+            self.actualizar_tablero(0)
+            self.es_un_cuadrado()
+            print("marco")
+        
 
     def Marcar(self,b):
-        self.funcionB()
+        self.convierte_lado_string()
         if (b == "0"):
             if self.turno % 2 == 0:
                 self.Boton0['state']='disabled'
                 self.Boton0['bg']='blue'                
                 self.actualizar_tablero(0)
                 self.es_un_cuadrado()
+                self.MarcarIA("8")
+
                 
-            else:
+            """else:
                 self.Boton0['state']='disabled'
                 self.Boton0['bg']='red'
                 
                 self.actualizar_tablero(0)
-                self.es_un_cuadrado()
+                self.es_un_cuadrado()"""
                 
         if (b=="1"):
             if self.turno % 2 == 0:
@@ -272,12 +287,12 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(1)
                 self.es_un_cuadrado()
                 
-            else:
+            """else:
                 self.Boton1['state']='disabled'
                 self.Boton1['bg']='red'
                 
                 self.actualizar_tablero(1)
-                self.es_un_cuadrado()
+                self.es_un_cuadrado()"""
                 
         if (b=="2"):
             if self.turno % 2 == 0:
@@ -287,12 +302,12 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(2)
                 self.es_un_cuadrado()
                 
-            else:
+            """else:
                 self.Boton2['state']='disabled'
                 self.Boton2['bg']='red'
                 
                 self.actualizar_tablero(2)
-                self.es_un_cuadrado()
+                self.es_un_cuadrado()"""
                 
         if (b=="3"):
             if self.turno % 2 == 0:
@@ -302,12 +317,12 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(3)
                 self.es_un_cuadrado()
                 
-            else:
+            """else:
                 self.Boton3['state']='disabled'
                 self.Boton3['bg']='red'
                 
                 self.actualizar_tablero(3)
-                self.es_un_cuadrado()
+                self.es_un_cuadrado()"""
                 
         if (b=="4"):
             if self.turno % 2 == 0:
@@ -317,12 +332,12 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(4)
                 self.es_un_cuadrado()
                 
-            else:
+            """else:
                 self.Boton4['state']='disabled'
                 self.Boton4['bg']='red'
                 
                 self.actualizar_tablero(4)
-                self.es_un_cuadrado()
+                self.es_un_cuadrado()"""
                 
         if (b=="5"):
             if self.turno % 2 == 0:
@@ -332,12 +347,12 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(5)
                 self.es_un_cuadrado()
                 
-            else:
+            """else:
                 self.Boton5['state']='disabled'
                 self.Boton5['bg']='red'
                 
                 self.actualizar_tablero(5)
-                self.es_un_cuadrado()
+                self.es_un_cuadrado()"""
                 
         if (b=="6"):
             if self.turno % 2 == 0:
@@ -347,12 +362,12 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(6)
                 self.es_un_cuadrado()
                 
-            else:
+            """else:
                 self.Boton6['state']='disabled'
                 self.Boton6['bg']='red'
                 
                 self.actualizar_tablero(6)
-                self.es_un_cuadrado()
+                self.es_un_cuadrado()"""
                 
         if (b=="7"):
             if self.turno % 2 == 0:
@@ -362,12 +377,12 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(7)
                 self.es_un_cuadrado()
                 
-            else:
+            """else:
                 self.Boton7['state']='disabled'
                 self.Boton7['bg']='red'
                 
                 self.actualizar_tablero(7)
-                self.es_un_cuadrado()
+                self.es_un_cuadrado()"""
                 
         if (b=="8"):
             if self.turno % 2 == 0:
@@ -377,12 +392,12 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(8)
                 self.es_un_cuadrado()
                 
-            else:
+            """else:
                 self.Boton8['state']='disabled'
                 self.Boton8['bg']='red'
                 
                 self.actualizar_tablero(8)
-                self.es_un_cuadrado()
+                self.es_un_cuadrado()"""
                 
         if (b=="9"):
             if self.turno % 2 == 0:
@@ -392,12 +407,12 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(9)
                 self.es_un_cuadrado()
                    
-            else:
+            """ else:
                 self.Boton9['state']='disabled'
                 self.Boton9['bg']='red'
                 
                 self.actualizar_tablero(9)
-                self.es_un_cuadrado()
+                self.es_un_cuadrado()"""
                 
         if (b=="10"):
             if self.turno % 2 == 0:
@@ -407,12 +422,12 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(10)
                 self.es_un_cuadrado()
                 
-            else:
+            """else:
                 self.Boton10['state']='disabled'
                 self.Boton10['bg']='red'
                 
                 self.actualizar_tablero(10)
-                self.es_un_cuadrado()
+                self.es_un_cuadrado()"""
                 
         if (b=="11"):
             if self.turno % 2 == 0:
@@ -422,15 +437,16 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(11)
                 self.es_un_cuadrado()
                 
-            else:
+            """else:
                 self.Boton11['state']='disabled'
                 self.Boton11['bg']='red'
                 
                 self.actualizar_tablero(11)
-                self.es_un_cuadrado()
+                self.es_un_cuadrado()"""
         
         self.turno+=1
         self.ganador()
+        #print(self.turno)
         
         #print(self.estado_tablero)
         #print(self.estado_cuadros)
