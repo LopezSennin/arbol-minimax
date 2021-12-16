@@ -21,71 +21,71 @@ class Tabla(tk.Frame):
         celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
         celda0.grid(row=0, column=1)
         #Botones Para esta madre 
-        self.Boton0=tk.Button(master=celda0, text="0",command = partial(self.Marcar, "b0"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2", width=10, height=1)
+        self.Boton0=tk.Button(master=celda0, text="0",command = partial(self.Marcar, "0"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2", width=10, height=1)
         self.Boton0.pack()
     
         celda4 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
         celda4.grid(row=0, column=3)
-        self.Boton4=tk.Button(master=celda4, text="4",command = partial(self.Marcar, "b4"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=10, height=1)
+        self.Boton4=tk.Button(master=celda4, text="4",command = partial(self.Marcar, "4"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=10, height=1)
         self.Boton4.pack()
 
         #------------------------------- fila 2 de botones----------------------------------------------------------
         celda3 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
         celda3.grid(row=3, column=1)
-        self.Boton3=tk.Button(master=celda3, text="3",command=partial(self.Marcar, "b3"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=10, height=1)
+        self.Boton3=tk.Button(master=celda3, text="3",command=partial(self.Marcar, "3"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=10, height=1)
         self.Boton3.pack()
 
         celda6 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
         celda6.grid(row=3, column=3)
-        self.Boton6=tk.Button(master=celda6, text="6",command=partial(self.Marcar, "b6"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=10, height=1)
+        self.Boton6=tk.Button(master=celda6, text="6",command=partial(self.Marcar, "6"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=10, height=1)
         self.Boton6.pack()
 
         #------------------------------- fila 3 de botones----------------------------------------------------------
 
         celda11 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
         celda11.grid(row=5, column=1)
-        self.Boton11=tk.Button(master=celda11, text="11",command=partial(self.Marcar, "b11"),font=("times new roman", 14), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=10, height=1)
+        self.Boton11=tk.Button(master=celda11, text="11",command=partial(self.Marcar, "11"),font=("times new roman", 14), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=10, height=1)
         self.Boton11.pack()
 
         celda8 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
         celda8.grid(row=5, column=3)
-        self.Boton8=tk.Button(master=celda8, text="8",command=partial(self.Marcar, "b8"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=10, height=1)
+        self.Boton8=tk.Button(master=celda8, text="8",command=partial(self.Marcar, "8"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=10, height=1)
         self.Boton8.pack()
 
         #------------------------------- columna 1 de botones----------------------------------------------------------
 
         celda1 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
         celda1.grid(row=2, column=0)
-        self.Boton1=tk.Button(master=celda1, text="1",command=partial(self.Marcar, "b1"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=2, height=5)
+        self.Boton1=tk.Button(master=celda1, text="1",command=partial(self.Marcar, "1"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=2, height=5)
         self.Boton1.pack()
 
         celda10 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
         celda10.grid(row=4, column=0)
-        self.Boton10=tk.Button(master=celda10, text="10",command=partial(self.Marcar, "b10"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=2, height=5)
+        self.Boton10=tk.Button(master=celda10, text="10",command=partial(self.Marcar, "10"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=2, height=5)
         self.Boton10.pack()
 
         #------------------------------- columna 2 de botones----------------------------------------------------------
 
         celda2 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
         celda2.grid(row=2, column=2)
-        self.Boton2=tk.Button(master=celda2, text="2",command=partial(self.Marcar, "b2"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=2, height=5)
+        self.Boton2=tk.Button(master=celda2, text="2",command=partial(self.Marcar, "2"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=2, height=5)
         self.Boton2.pack()
 
         celda9 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
         celda9.grid(row=4, column=2)
-        self.Boton9=tk.Button(master=celda9, text="9",command=partial(self.Marcar, "b9"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=2, height=5)
+        self.Boton9=tk.Button(master=celda9, text="9",command=partial(self.Marcar, "9"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=2, height=5)
         self.Boton9.pack()
 
         #------------------------------- columna 3 de botones----------------------------------------------------------
 
         celda5 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
         celda5.grid(row=2, column=4)
-        self.Boton5=tk.Button(master=celda5, text="5",command=partial(self.Marcar, "b5"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=2, height=5)
+        self.Boton5=tk.Button(master=celda5, text="5",command=partial(self.Marcar, "5"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=2, height=5)
         self.Boton5.pack()
 
         celda7 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
         celda7.grid(row=4, column=4)
-        self.Boton7=tk.Button(master=celda7, text="7",command=partial(self.Marcar, "b7"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=2, height=5)
+        self.Boton7=tk.Button(master=celda7, text="7",command=partial(self.Marcar, "7"),font=("times new roman", 15), bg="dimgrey",fg="cornsilk2",bd=0,cursor="hand2",width=2, height=5)
         self.Boton7.pack()
 
         #-------------------------------------------- puntos ------------------------------------------------------
@@ -139,6 +139,7 @@ class Tabla(tk.Frame):
     puntajeM=0
     estado_tablero= np.zeros(12)
     estado_cuadros= np.zeros(4)
+    estado_tableroIA=[0,0,0,0,0,0,1,0,0,0,0,0]
 
     def actualizar_tablero(self,posicion):
         valor=1
@@ -230,10 +231,26 @@ class Tabla(tk.Frame):
             label0=tk.Label(master=celda0, text=texto,font=("times new roman", 12),bg="gray",fg="black",width=38,height=20)
             label0.pack()
 
-    def Marcar(self,b):
+    def funcionA(self,tableroActual,tableroIA):
+        listaux=[]
+        for i in range(len(tableroActual)):
+            if tableroActual[i]==0:
+                listaux.append(i)
         
+        for i in range(len(listaux)):
+            if tableroIA[listaux[i]] == 1:
+                print(listaux[i])
+                return listaux[i]
 
-        if (b == "b0"):
+    def funcionB(self):
+        str(self.funcionA(self.estado_tablero,self.estado_tableroIA))
+
+    def MovimientoIA(self):
+        self.Marcar(self.funcionB())
+
+    def Marcar(self,b):
+        self.funcionB()
+        if (b == "0"):
             if self.turno % 2 == 0:
                 self.Boton0['state']='disabled'
                 self.Boton0['bg']='blue'                
@@ -247,7 +264,7 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(0)
                 self.es_un_cuadrado()
                 
-        if (b=="b1"):
+        if (b=="1"):
             if self.turno % 2 == 0:
                 self.Boton1['state']='disabled'
                 self.Boton1['bg']='blue'
@@ -262,7 +279,7 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(1)
                 self.es_un_cuadrado()
                 
-        if (b=="b2"):
+        if (b=="2"):
             if self.turno % 2 == 0:
                 self.Boton2['state']='disabled'
                 self.Boton2['bg']='blue'
@@ -277,7 +294,7 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(2)
                 self.es_un_cuadrado()
                 
-        if (b=="b3"):
+        if (b=="3"):
             if self.turno % 2 == 0:
                 self.Boton3['state']='disabled'
                 self.Boton3['bg']='blue'
@@ -292,7 +309,7 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(3)
                 self.es_un_cuadrado()
                 
-        if (b=="b4"):
+        if (b=="4"):
             if self.turno % 2 == 0:
                 self.Boton4['state']='disabled'
                 self.Boton4['bg']='blue'
@@ -307,7 +324,7 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(4)
                 self.es_un_cuadrado()
                 
-        if (b=="b5"):
+        if (b=="5"):
             if self.turno % 2 == 0:
                 self.Boton5['state']='disabled'
                 self.Boton5['bg']='blue'
@@ -322,7 +339,7 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(5)
                 self.es_un_cuadrado()
                 
-        if (b=="b6"):
+        if (b=="6"):
             if self.turno % 2 == 0:
                 self.Boton6['state']='disabled'
                 self.Boton6['bg']='blue'
@@ -337,7 +354,7 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(6)
                 self.es_un_cuadrado()
                 
-        if (b=="b7"):
+        if (b=="7"):
             if self.turno % 2 == 0:
                 self.Boton7['state']='disabled'
                 self.Boton7['bg']='blue'
@@ -352,7 +369,7 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(7)
                 self.es_un_cuadrado()
                 
-        if (b=="b8"):
+        if (b=="8"):
             if self.turno % 2 == 0:
                 self.Boton8['state']='disabled'
                 self.Boton8['bg']='blue'
@@ -367,7 +384,7 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(8)
                 self.es_un_cuadrado()
                 
-        if (b=="b9"):
+        if (b=="9"):
             if self.turno % 2 == 0:
                 self.Boton9['state']='disabled'
                 self.Boton9['bg']='blue'
@@ -382,7 +399,7 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(9)
                 self.es_un_cuadrado()
                 
-        if (b=="b10"):
+        if (b=="10"):
             if self.turno % 2 == 0:
                 self.Boton10['state']='disabled'
                 self.Boton10['bg']='blue'
@@ -397,7 +414,7 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(10)
                 self.es_un_cuadrado()
                 
-        if (b=="b11"):
+        if (b=="11"):
             if self.turno % 2 == 0:
                 self.Boton11['state']='disabled'
                 self.Boton11['bg']='blue'
@@ -412,14 +429,13 @@ class Tabla(tk.Frame):
                 self.actualizar_tablero(11)
                 self.es_un_cuadrado()
         
-        print((self.estado_tablero[0] == self.estado_tablero[1] and self.estado_tablero[0] == self.estado_tablero[2] and self.estado_tablero[0] == self.estado_tablero[3] and self.estado_tablero[0] != 0))
-        print((self.estado_tablero[2] == self.estado_tablero[4] and self.estado_tablero[2] == self.estado_tablero[5] and self.estado_tablero[2] == self.estado_tablero[6] and self.estado_tablero[2] != 0))
         self.turno+=1
         self.ganador()
-        print(self.estado_tablero)
-        print(self.estado_cuadros)
-        print(self.puntajeJ)
-        print(self.puntajeM)
+        
+        #print(self.estado_tablero)
+        #print(self.estado_cuadros)
+        #print(self.puntajeJ)
+        #print(self.puntajeM)
 
 def main():
     app = tk.Tk()
