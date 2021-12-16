@@ -64,7 +64,23 @@ def cuadrosExistenetes(ambiente):
     contador = 0
     return cuadros
 
-print(cuadrosExistenetes(ambiente))
+
+def quitarCuadrosExistentes(ambiente):
+    a = cuadrosExistenetes(ambiente)
+    if len(a) == 0:
+        return ambiente
+    else:
+        for i in range(len(a)):
+            for j in a[i]:
+                ambiente[j]=0
+    return ambiente
+
+#Prueba quitarCuadrosExistentes(ambiente)
+#print(ambiente)
+#print(cuadrosExistenetes(ambiente))
+#print(quitarCuadrosExistentes(ambiente))
+
+
 
 def ponerLinea(N,ambiente):
     ambientecopia = list(ambiente)
@@ -124,7 +140,7 @@ def llenarArbol(ambiente):
     
     return arvol
 
-print(contadorDeCeros(ambiente))
+
 
 
 
