@@ -124,6 +124,14 @@ def numeroDeCoincidencias(ambiente, cuadro):
     return contador
 
 
+def listadoHojasPorNodo(arbol, Nnodo):
+    lista = []
+    for i in range(contadorDeCeros(arbol.raiz)-1):
+        lista.append(arbol.hijos[Nnodo].hijos[i])
+    return lista
+
+
+
 #prueba numeroDeCoincidencias(ambiente, cuadro2)
 #cuadro2 = [2,4,5,6]
 #print(numeroDeCoincidencias(ambiente, cuadro2))
@@ -148,7 +156,7 @@ def llenarArbol(ambiente):
     control2=0
     for i in range(12):
         if pudePonerLinea(i, ambiente):
-            print(i)
+            #print(i)
 
             arvol.hijos.append(arbol())
             arvol.hijos[control].raiz=ponerLinea(i, ambiente)
@@ -194,8 +202,10 @@ def llenarArbol(ambiente):
     
     return arvol
 
+print(ambiente)
+arvol = llenarArbol(ambiente)
 
-
+print(listadoHojasPorNodo(arvol, 1))
 
 
 '''
