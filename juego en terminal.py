@@ -1,5 +1,5 @@
 import copy
-ambiente= [1,0,1,0,0,0,1,1,0,1,0]
+ambiente= [1,0,1,0,0,0,1,1,0,1,0,1]
 
 class arbol():
     def __init__(self):
@@ -29,23 +29,22 @@ def ponerLinea(N,ambiente):
 def llenarArbol(ambiente):
     arvol = arbol()
     arvol.raiz=ambiente
+    arbolAux = arbol()
     control=0
     control2=0
     for i in range(12):
         if pudePonerLinea(i, ambiente):
-            arvol.hijos.append(arbol())
-            arvol.hijos[control].raiz=ponerLinea(i, ambiente)
-            for j in range(12):
-                if pudePonerLinea(j, arvol.hijos[control].raiz):
-                    arvol.hijos[control].hijos.append(arbol())
-                    arvol.hijos[control].hijos[control2]=ponerLinea(i, ambiente) # falta
-                    control2 = control2 + 1
-                    if j == 11:
-                        control2 = 0
-            control = control + 1
+            ambienteaux = ponerLinea(i, ambiente)
+            arbolAux.raiz = ambienteaux
+            for j in range(11):
+                if pudePonerLinea(j, ambienteaux):
+                    arbolAux.hijos.append(ponerLinea(j,ambienteaux))
+                    
+            arvol.hijos.append(arbolAux)
+            arbolAux = arbol()
     return arvol
 
-
+llenarArbol(ambiente)
 
 '''
 ambiente2=list(ambiente)
