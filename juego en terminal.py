@@ -21,6 +21,14 @@ def pudePonerLinea(N,ambiente):
     else: 
         return False
 
+def contadorDeCeros(ambiente):
+    contador = 0
+    for i in range(len(ambiente)):
+        if ambiente[i]==0:
+            contador = contador + 1
+    return contador
+
+
 def ponerLinea(N,ambiente):
     ambientecopia = list(ambiente)
     ambientecopia[N]=1
@@ -46,7 +54,7 @@ def llenarArbol(ambiente):
                     if j == 11:
                         control2 = 0
             control = control + 1
-    print(ambiente)
+    '''print(ambiente)
     print(arvol.hijos[0].raiz)
     print(arvol.hijos[1].raiz)
     print(arvol.hijos[2].raiz)
@@ -71,7 +79,7 @@ def llenarArbol(ambiente):
     print(arvol.hijos[0].hijos[7])
     print(arvol.hijos[0].hijos[8])
     print(arvol.hijos[0].hijos[9])
-    
+    '''
 
 
 
@@ -79,7 +87,7 @@ def llenarArbol(ambiente):
     
     return arvol
 
-llenarArbol(ambiente)
+print(contadorDeCeros(ambiente))
 
 
 
