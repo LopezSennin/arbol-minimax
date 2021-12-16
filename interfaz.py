@@ -147,34 +147,34 @@ class Tabla(tk.Frame):
     def es_un_cuadrado(self):
         valor=1
         if self.turno % 2 == 0:
-                if ((self.estado_tablero[0] == self.estado_tablero[1] and self.estado_tablero[0] == self.estado_tablero[2] and self.estado_tablero[0] == self.estado_tablero[3] and self.estado_tablero[0] != 0) and self.estado_cuadros[0]==0):
-                    self.puntajeJ+=1
-                    self.estado_cuadros[0]=valor
-                    celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
-                    celda0.grid(row=2, column=1)
-                    label0=tk.Label(master=celda0, text="A",font=("times new roman", 50),bg="blue",fg="black",bd=20)
-                    label0.pack()
-                elif ((self.estado_tablero[2] == self.estado_tablero[4] and self.estado_tablero[2] == self.estado_tablero[5] and self.estado_tablero[2] == self.estado_tablero[6] and self.estado_tablero[2] != 0) and self.estado_cuadros[1]==0):
-                    self.puntajeJ+=1
-                    self.estado_cuadros[1]=valor
-                    celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
-                    celda0.grid(row=2, column=3)
-                    label0=tk.Label(master=celda0, text="X",font=("times new roman", 50),bg="blue",fg="black",bd=20)
-                    label0.pack()
-                elif ((self.estado_tablero[3] == self.estado_tablero[9] and self.estado_tablero[3] == self.estado_tablero[10] and self.estado_tablero[3] == self.estado_tablero[11] and self.estado_tablero[3] != 0) and self.estado_cuadros[2]==0):
-                    self.puntajeJ+=1
-                    self.estado_cuadros[2]=valor
-                    celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
-                    celda0.grid(row=4, column=1)
-                    label0=tk.Label(master=celda0, text="D",font=("times new roman", 50),bg="blue",fg="black",bd=20)
-                    label0.pack()
-                elif ((self.estado_tablero[6] == self.estado_tablero[7] and self.estado_tablero[6] == self.estado_tablero[8] and self.estado_tablero[6] == self.estado_tablero[9] and self.estado_tablero[6] != 0) and self.estado_cuadros[3]==0):
-                    self.puntajeJ+=1
-                    self.estado_cuadros[3]=valor
-                    celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
-                    celda0.grid(row=4, column=3)
-                    label0=tk.Label(master=celda0, text="F",font=("times new roman", 50),bg="blue",fg="black",bd=20)
-                    label0.pack()
+            if ((self.estado_tablero[0] == self.estado_tablero[1] and self.estado_tablero[0] == self.estado_tablero[2] and self.estado_tablero[0] == self.estado_tablero[3] and self.estado_tablero[0] != 0) and self.estado_cuadros[0]==0):
+                self.puntajeJ+=1
+                self.estado_cuadros[0]=valor
+                celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
+                celda0.grid(row=2, column=1)
+                label0=tk.Label(master=celda0, text="A",font=("times new roman", 50),bg="blue",fg="black",bd=20)
+                label0.pack()
+            elif ((self.estado_tablero[2] == self.estado_tablero[4] and self.estado_tablero[2] == self.estado_tablero[5] and self.estado_tablero[2] == self.estado_tablero[6] and self.estado_tablero[2] != 0) and self.estado_cuadros[1]==0):
+                self.puntajeJ+=1
+                self.estado_cuadros[1]=valor
+                celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
+                celda0.grid(row=2, column=3)
+                label0=tk.Label(master=celda0, text="A",font=("times new roman", 50),bg="blue",fg="black",bd=20)
+                label0.pack()
+            elif ((self.estado_tablero[3] == self.estado_tablero[9] and self.estado_tablero[3] == self.estado_tablero[10] and self.estado_tablero[3] == self.estado_tablero[11] and self.estado_tablero[3] != 0) and self.estado_cuadros[2]==0):
+                self.puntajeJ+=1
+                self.estado_cuadros[2]=valor
+                celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
+                celda0.grid(row=4, column=1)
+                label0=tk.Label(master=celda0, text="A",font=("times new roman", 50),bg="blue",fg="black",bd=20)
+                label0.pack()
+            elif ((self.estado_tablero[6] == self.estado_tablero[7] and self.estado_tablero[6] == self.estado_tablero[8] and self.estado_tablero[6] == self.estado_tablero[9] and self.estado_tablero[6] != 0) and self.estado_cuadros[3]==0):
+                self.puntajeJ+=1
+                self.estado_cuadros[3]=valor
+                celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
+                celda0.grid(row=4, column=3)
+                label0=tk.Label(master=celda0, text="A",font=("times new roman", 50),bg="blue",fg="black",bd=20)
+                label0.pack()
         else:
             
             if ((self.estado_tablero[0] == self.estado_tablero[1] and self.estado_tablero[0] == self.estado_tablero[2] and self.estado_tablero[0] == self.estado_tablero[3] and self.estado_tablero[0] != 0) and self.estado_cuadros[0]==0):
@@ -189,107 +189,45 @@ class Tabla(tk.Frame):
                 self.estado_cuadros[1]=valor
                 celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
                 celda0.grid(row=2, column=3)
-                label0=tk.Label(master=celda0, text="M",font=("times new roman", 50),bg="red",fg="black",bd=20)
+                label0=tk.Label(master=celda0, text="B",font=("times new roman", 50),bg="red",fg="black",bd=20)
                 label0.pack()
             elif ((self.estado_tablero[3] == self.estado_tablero[9] and self.estado_tablero[3] == self.estado_tablero[10] and self.estado_tablero[3] == self.estado_tablero[11] and self.estado_tablero[3] != 0) and self.estado_cuadros[2]==0):
                 self.puntajeM+=1
                 self.estado_cuadros[2]=valor
                 celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
                 celda0.grid(row=4, column=1)
-                label0=tk.Label(master=celda0, text="N",font=("times new roman", 50),bg="red",fg="black",bd=20)
+                label0=tk.Label(master=celda0, text="B",font=("times new roman", 50),bg="red",fg="black",bd=20)
                 label0.pack()
             elif ((self.estado_tablero[6] == self.estado_tablero[7] and self.estado_tablero[6] == self.estado_tablero[8] and self.estado_tablero[6] == self.estado_tablero[9] and self.estado_tablero[6] != 0) and self.estado_cuadros[3]==0):
                 self.puntajeM+=1
                 self.estado_cuadros[3]=valor
                 celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
                 celda0.grid(row=4, column=3)
-                label0=tk.Label(master=celda0, text="O",font=("times new roman", 50),bg="red",fg="black",bd=20)
+                label0=tk.Label(master=celda0, text="B",font=("times new roman", 50),bg="red",fg="black",bd=20)
                 label0.pack()
-
-    
-    def cuadrosNoExistentes(ambiente):
-        cuadros = []
-        cuadro1 = [0,1,2,3]
-        cuadro2 = [2,4,5,6]
-        cuadro3 = [3,9,10,11]
-        cuadro4 = [6,7,8,9]
-        contador = 0
-        contador2 = 0
-        for i in cuadro1:
-            contador2 = contador2 + 1
-            if ambiente[i] == 1:
-                contador = contador + 1
-            if contador2 == 4:
-                if contador != 4:
-                    cuadros.append(cuadro1)
-                    contador2 = 0
-        contador = 0
-        contador2 = 0
-        for i in cuadro2:
-            contador2 = contador2 + 1
-            if ambiente[i] == 1:
-                contador = contador + 1
-            if contador2 == 4:
-                if contador != 4:
-                    cuadros.append(cuadro2)
-                    contador2 = 0
-        contador = 0
-        contador2 = 0
-        for i in cuadro3:
-            contador2 = contador2 + 1
-            if ambiente[i] == 1:
-                contador = contador + 1
-            if contador2 == 4:
-                if contador != 4:
-                    cuadros.append(cuadro3)
-                    contador2 = 0
-        contador = 0
-        contador2 = 0
-        for i in cuadro4:
-            contador2 = contador2 + 1
-            if ambiente[i] == 1:
-                contador = contador + 1
-            if contador2 == 4:
-                if contador != 4:
-                    cuadros.append(cuadro4)
-                    contador2 = 0
-        contador = 0
-        contador2 = 0
-        return cuadros
-    
-    def esta_ocupado_cuadro(self):
-        ocupada = True
-        if self.estado_cuadros[0] == 0:
-            ocupada = False
-        elif self.estado_cuadros[1] == 0:
-            ocupada = False
-        elif self.estado_cuadros[2] == 0:
-            ocupada = False
-        elif self.estado_cuadros[3] == 0:
-            ocupada = False
-        
-
-        print(ocupada)
-        return ocupada
     
     def ganador(self):
         if (self.estado_tablero == 1).all() or (self.estado_cuadros == 1).all():
             text=""
             puntaje=0
+            puntaje2=0
             if self.puntajeJ > self.puntajeM:
-                text = 'Ganador: Jugador '
+                text = 'Ganador: Jugador A |Puntaje: '
                 puntaje=self.puntajeJ
+                puntaje2=self.puntajeM
             elif self.puntajeM > self.puntajeJ:
-                text = 'Ganador: Maquina '
+                text = 'Ganador: Maquina B |Puntaje: '
                 puntaje=self.puntajeM
+                puntaje2=self.puntajeJ
             else:
-                text = 'Empate: '
+                text = 'Empate |Puntaje:  '
                 puntaje=self.puntajeJ
-            texto=text+str(puntaje)
+                puntaje2=self.puntajeM
+            texto=text+str(puntaje)+" vs Puntaje: "+str(puntaje2)+"|"
             
             celda0 = tk.Frame(master=self.master, relief=tk.RAISED, borderwidth=2)
             celda0.grid(row=0, column=0)
-            label0=tk.Label(master=celda0, text=texto,font=("times new roman", 20),bg="gray",fg="black",bd=10,width=22,height=12)
+            label0=tk.Label(master=celda0, text=texto,font=("times new roman", 12),bg="gray",fg="black",width=38,height=20)
             label0.pack()
 
     def Marcar(self,b):
@@ -298,8 +236,7 @@ class Tabla(tk.Frame):
         if (b == "b0"):
             if self.turno % 2 == 0:
                 self.Boton0['state']='disabled'
-                self.Boton0['bg']='blue'
-                
+                self.Boton0['bg']='blue'                
                 self.actualizar_tablero(0)
                 self.es_un_cuadrado()
                 
@@ -336,9 +273,9 @@ class Tabla(tk.Frame):
             else:
                 self.Boton2['state']='disabled'
                 self.Boton2['bg']='red'
-                self.es_un_cuadrado()
-                self.actualizar_tablero(2)
                 
+                self.actualizar_tablero(2)
+                self.es_un_cuadrado()
                 
         if (b=="b3"):
             if self.turno % 2 == 0:
@@ -381,92 +318,92 @@ class Tabla(tk.Frame):
             else:
                 self.Boton5['state']='disabled'
                 self.Boton5['bg']='red'
-                self.es_un_cuadrado()
-                self.actualizar_tablero(5)
                 
+                self.actualizar_tablero(5)
+                self.es_un_cuadrado()
                 
         if (b=="b6"):
             if self.turno % 2 == 0:
                 self.Boton6['state']='disabled'
                 self.Boton6['bg']='blue'
-                self.es_un_cuadrado()
-                self.actualizar_tablero(6)
                 
+                self.actualizar_tablero(6)
+                self.es_un_cuadrado()
                 
             else:
                 self.Boton6['state']='disabled'
                 self.Boton6['bg']='red'
-                self.es_un_cuadrado()
-                self.actualizar_tablero(6)
                 
+                self.actualizar_tablero(6)
+                self.es_un_cuadrado()
                 
         if (b=="b7"):
             if self.turno % 2 == 0:
                 self.Boton7['state']='disabled'
                 self.Boton7['bg']='blue'
-                self.es_un_cuadrado()
-                self.actualizar_tablero(7)
                 
+                self.actualizar_tablero(7)
+                self.es_un_cuadrado()
                 
             else:
                 self.Boton7['state']='disabled'
                 self.Boton7['bg']='red'
-                self.es_un_cuadrado()
-                self.actualizar_tablero(7)
                 
+                self.actualizar_tablero(7)
+                self.es_un_cuadrado()
                 
         if (b=="b8"):
             if self.turno % 2 == 0:
                 self.Boton8['state']='disabled'
                 self.Boton8['bg']='blue'
-                self.es_un_cuadrado()
-                self.actualizar_tablero(8)
                 
+                self.actualizar_tablero(8)
+                self.es_un_cuadrado()
                 
             else:
                 self.Boton8['state']='disabled'
                 self.Boton8['bg']='red'
-                self.es_un_cuadrado()
-                self.actualizar_tablero(8)
                 
+                self.actualizar_tablero(8)
+                self.es_un_cuadrado()
                 
         if (b=="b9"):
             if self.turno % 2 == 0:
                 self.Boton9['state']='disabled'
                 self.Boton9['bg']='blue'
-                self.es_un_cuadrado()
-                self.actualizar_tablero(9)
                 
+                self.actualizar_tablero(9)
+                self.es_un_cuadrado()
                    
             else:
                 self.Boton9['state']='disabled'
                 self.Boton9['bg']='red'
-                self.es_un_cuadrado()
-                self.actualizar_tablero(9)
                 
+                self.actualizar_tablero(9)
+                self.es_un_cuadrado()
                 
         if (b=="b10"):
             if self.turno % 2 == 0:
                 self.Boton10['state']='disabled'
                 self.Boton10['bg']='blue'
-                self.es_un_cuadrado()
-                self.actualizar_tablero(10)
                 
+                self.actualizar_tablero(10)
+                self.es_un_cuadrado()
                 
             else:
                 self.Boton10['state']='disabled'
                 self.Boton10['bg']='red'
-                self.es_un_cuadrado()
-                self.actualizar_tablero(10)
                 
+                self.actualizar_tablero(10)
+                self.es_un_cuadrado()
                 
         if (b=="b11"):
             if self.turno % 2 == 0:
                 self.Boton11['state']='disabled'
                 self.Boton11['bg']='blue'
-                self.es_un_cuadrado()
-                self.actualizar_tablero(11)
                 
+                self.actualizar_tablero(11)
+                self.es_un_cuadrado()
                 
             else:
                 self.Boton11['state']='disabled'
