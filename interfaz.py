@@ -253,10 +253,10 @@ class Tabla(tk.Frame):
         print(b)
         print(type(b))
         if (b=="8"):
-            self.Boton0['state']='disabled'
-            self.Boton0['bg']='red'
+            self.Boton8['state']='disabled'
+            self.Boton8['bg']='red'
             
-            self.actualizar_tablero(0)
+            self.actualizar_tablero(8)
             self.es_un_cuadrado()
             print("marco")
         
@@ -269,7 +269,7 @@ class Tabla(tk.Frame):
                 self.Boton0['bg']='blue'                
                 self.actualizar_tablero(0)
                 self.es_un_cuadrado()
-                self.MarcarIA("8")
+                self.MovimientoIA()
 
                 
             """else:
