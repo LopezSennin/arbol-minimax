@@ -210,7 +210,7 @@ def valorHoja(ambiente):
         if valorAux== 3:
             auxvalorAmbiente.append(4)
         if valorAux== 4:
-            auxvalorAmbiente.append(-4)
+            auxvalorAmbiente.append(-1)
     return sum(auxvalorAmbiente)
 
 #herisyuca 
