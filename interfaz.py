@@ -139,7 +139,7 @@ class Tabla(tk.Frame):
     puntajeM=0
     estado_tablero= np.zeros(12)
     estado_cuadros= np.zeros(4)
-    estado_tableroIA=[0,0,0,1,0,0,0,0,0,0,0,0]
+    
 
     def actualizar_tablero(self,posicion):
         valor=1
@@ -240,7 +240,7 @@ class Tabla(tk.Frame):
                 self.estado_tableroIA = 1
     
     def generarAmbienteCon1MovimientoIA(self):
-        ambienteCon1Movimiento = np.list(algoritmos.minimax(self.estado_tablero))
+        ambienteCon1Movimiento = algoritmos.minimax(self.estado_tablero)
         return ambienteCon1Movimiento
 
     def hacerMovimientoIA(sefl):
@@ -257,8 +257,8 @@ class Tabla(tk.Frame):
                 print(listaux[i])
                 return listaux[i]
 
-    def MovimientoIA(self):
-        self.MarcarIA(str(self.lado_marca_ia(self.estado_tablero,self.estado_tableroIA)))
+    def MovimientoIA(self, tableroIAuax):
+        self.MarcarIA(str(self.lado_marca_ia(self.estado_tablero,tableroIAuax)))
         print("entromovimiento")
 
     def MarcarIA(self,b):
@@ -347,7 +347,8 @@ class Tabla(tk.Frame):
                 self.Boton0['bg']='blue'                
                 self.actualizar_tablero(0)
                 self.es_un_cuadrado()
-                self.MovimientoIA()
+                tableroaux = self.generarAmbienteCon1MovimientoIA()
+                self.MovimientoIA(tableroaux)
 
                 
             """else:
@@ -364,7 +365,8 @@ class Tabla(tk.Frame):
                 
                 self.actualizar_tablero(1)
                 self.es_un_cuadrado()
-                self.MovimientoIA()
+                tableroaux = self.generarAmbienteCon1MovimientoIA()
+                self.MovimientoIA(tableroaux)
                 
             """else:
                 self.Boton1['state']='disabled'
@@ -380,7 +382,8 @@ class Tabla(tk.Frame):
                 
                 self.actualizar_tablero(2)
                 self.es_un_cuadrado()
-                self.MovimientoIA()
+                tableroaux = self.generarAmbienteCon1MovimientoIA()
+                self.MovimientoIA(tableroaux)
                 
             """else:
                 self.Boton2['state']='disabled'
@@ -396,7 +399,8 @@ class Tabla(tk.Frame):
                 
                 self.actualizar_tablero(3)
                 self.es_un_cuadrado()
-                self.MovimientoIA()
+                tableroaux = self.generarAmbienteCon1MovimientoIA()
+                self.MovimientoIA(tableroaux)
                 
             """else:
                 self.Boton3['state']='disabled'
@@ -412,7 +416,8 @@ class Tabla(tk.Frame):
                 
                 self.actualizar_tablero(4)
                 self.es_un_cuadrado()
-                self.MovimientoIA()
+                tableroaux = self.generarAmbienteCon1MovimientoIA()
+                self.MovimientoIA(tableroaux)
                 
             """else:
                 self.Boton4['state']='disabled'
@@ -428,7 +433,8 @@ class Tabla(tk.Frame):
                 
                 self.actualizar_tablero(5)
                 self.es_un_cuadrado()
-                self.MovimientoIA()
+                tableroaux = self.generarAmbienteCon1MovimientoIA()
+                self.MovimientoIA(tableroaux)
                 
             """else:
                 self.Boton5['state']='disabled'
@@ -444,7 +450,8 @@ class Tabla(tk.Frame):
                 
                 self.actualizar_tablero(6)
                 self.es_un_cuadrado()
-                self.MovimientoIA()
+                tableroaux = self.generarAmbienteCon1MovimientoIA()
+                self.MovimientoIA(tableroaux)
                 
             """else:
                 self.Boton6['state']='disabled'
@@ -460,7 +467,8 @@ class Tabla(tk.Frame):
                 
                 self.actualizar_tablero(7)
                 self.es_un_cuadrado()
-                self.MovimientoIA()
+                tableroaux = self.generarAmbienteCon1MovimientoIA()
+                self.MovimientoIA(tableroaux)
                 
             """else:
                 self.Boton7['state']='disabled'
@@ -476,7 +484,8 @@ class Tabla(tk.Frame):
                 
                 self.actualizar_tablero(8)
                 self.es_un_cuadrado()
-                self.MovimientoIA()
+                tableroaux = self.generarAmbienteCon1MovimientoIA()
+                self.MovimientoIA(tableroaux)
                 
             """else:
                 self.Boton8['state']='disabled'
@@ -492,8 +501,9 @@ class Tabla(tk.Frame):
                 
                 self.actualizar_tablero(9)
                 self.es_un_cuadrado()
-                self.MovimientoIA()
-                   
+                tableroaux = self.generarAmbienteCon1MovimientoIA()
+                self.MovimientoIA(tableroaux)
+                
             """ else:
                 self.Boton9['state']='disabled'
                 self.Boton9['bg']='red'
@@ -508,7 +518,8 @@ class Tabla(tk.Frame):
                 
                 self.actualizar_tablero(10)
                 self.es_un_cuadrado()
-                self.MovimientoIA()
+                tableroaux = self.generarAmbienteCon1MovimientoIA()
+                self.MovimientoIA(tableroaux)
                 
             """else:
                 self.Boton10['state']='disabled'
@@ -524,7 +535,8 @@ class Tabla(tk.Frame):
                 
                 self.actualizar_tablero(11)
                 self.es_un_cuadrado()
-                self.MovimientoIA()
+                tableroaux = self.generarAmbienteCon1MovimientoIA()
+                self.MovimientoIA(tableroaux)
                 
             """else:
                 self.Boton11['state']='disabled'

@@ -1,6 +1,6 @@
 import copy
 import numpy as np
-ambiente= [1,1,1,1,0,0,1,1,0,1,0,0]
+ambiente= [1,1,1,1,0,0,1,1,1,1,0,0]
 
 class arbol():
     def __init__(self):
@@ -128,20 +128,12 @@ def numeroDeCoincidencias(ambiente, cuadro):
 def listadoHojasPorNodo(arbol, Nnodo):
     lista = []
     for i in range(contadorDeCeros(arbol.raiz)-1):
-        lista.append(arbol.hijos[Nnodo].hijos[i])
+        lista.append(arbol.hijos[Nnodo].hijos[i].raiz)
     return lista
 
 
 
-#prueba numeroDeCoincidencias(ambiente, cuadro2)
-#cuadro2 = [2,4,5,6]
-#print(numeroDeCoincidencias(ambiente, cuadro2))
 
-#Prueba cuadrosNoExistentes(ambiente)
-#print(ambiente)
-#print(cuadrosExistenetes(ambiente))
-#print('-----------------------------')
-#print(cuadrosNoExistentes(ambiente))
 
 
 
@@ -151,6 +143,41 @@ def ponerLinea(N,ambiente):
     return ambientecopia
 
 def llenarArbol(ambiente):
+    arvol = arbol()
+    arvol.raiz = ambiente
+    arbolaux = arbol()
+    arbolaux2 = arbol()
+    for i in range(12):
+        if pudePonerLinea(i, ambiente):
+            arbolaux.raiz = ponerLinea(i, ambiente)
+            for j in range(12):
+                if pudePonerLinea(j, arbolaux.raiz):
+                    arbolaux2.raiz = ponerLinea(j, arbolaux.raiz)
+                    arbolaux.hijos.append(arbolaux2)
+                arbolaux2 = arbol()
+            arvol.hijos.append(arbolaux)
+            arbolaux = arbol()
+    return arvol
+
+def imprimirArbol(arbol):
+    print(arbol.raiz)
+    for p in range(contadorDeCeros(arbol.raiz)):
+        print(contadorDeCeros(arbol.raiz))
+        print('Hijo'+ str(p) +'-------------------------------')
+        print(arbol.hijos[p].raiz)
+        for q in range(contadorDeCeros(arbol.hijos[p].raiz)):
+            print(contadorDeCeros(arbol.hijos[p].raiz))
+            print('Hoja' + str(q) + '-------------------------------')
+            print(arbol.hijos[p].hijos[q].raiz)
+
+def listadoHojasPorNodo1(arbol, Nnodo):
+    for p in range(contadorDeCeros(arbol.raiz)):
+        for q in range(contadorDeCeros(arbol.hijos[p].raiz)):
+            arbol.hijos[p].hijos[q].raiz
+
+
+
+def llenarArbol1(ambiente):
     arvol = arbol()
     arvol.raiz=ambiente
     control=0
@@ -167,37 +194,6 @@ def llenarArbol(ambiente):
                     if j == 11:
                         control2 = 0
             control = control + 1
-    '''print(ambiente)
-    print(arvol.hijos[0].raiz)
-    print(arvol.hijos[1].raiz)
-    print(arvol.hijos[2].raiz)
-    print(arvol.hijos[3].raiz)
-    print(arvol.hijos[4].raiz)
-    print(arvol.hijos[5].raiz)
-    print(arvol.hijos[6].raiz)
-    print(arvol.hijos[7].raiz)
-    print(arvol.hijos[8].raiz)
-    print(arvol.hijos[9].raiz)
-    print(arvol.hijos[10].raiz)
-
-    print("---------------------")
-
-    print(arvol.hijos[1].hijos[0])
-    print(arvol.hijos[1].hijos[1])
-    print(arvol.hijos[1].hijos[2])
-    print(arvol.hijos[1].hijos[3])
-    print(arvol.hijos[1].hijos[4])
-    print(arvol.hijos[1].hijos[5])
-    print(arvol.hijos[0].hijos[6])
-    print(arvol.hijos[0].hijos[7])
-    print(arvol.hijos[0].hijos[8])
-    print(arvol.hijos[0].hijos[9])
-    '''
-
-
-
-    
-    
     return arvol
 
 def valorHoja(ambiente):
@@ -232,6 +228,8 @@ def minimax(ambiente):
     for i in range(numeroDeHijos_aux):
         listaNodos_aux = listadoHojasPorNodo(arvol,i)
         listaPuntaje_aux = obtenerListaPuntajesdeHojas(listaNodos_aux)
+        #print(listaNodos_aux)
+        #print(listaPuntaje_aux)
         puntajeAux= min(listaPuntaje_aux)
         listaDePuntajeN1.append(puntajeAux)
     puntajeDefinitivo=max(listaDePuntajeN1)
@@ -245,9 +243,13 @@ def minimax(ambiente):
 
 
 
-#print(ambiente)
-#arvol = llenarArbol(ambiente)
+#ambiente3 = [1,1,1,1,0,0,1,0,1,0,1,0]
+#arvol = llenarArbol(ambiente3)
+#imprimirArbol(arvol)
+#minimax(ambiente3)
 #listaHojas=listadoHojasPorNodo(arvol, 1)
+#print(listaHojas)
+
 #print(obtenerListaPuntajesdeHojas(listaHojas))
 
 '''
